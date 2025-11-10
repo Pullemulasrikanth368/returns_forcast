@@ -1,0 +1,391 @@
+{"returnOverview" :[
+    {
+        "Name": "Company",
+        "Header": "Companies"
+    },
+    {
+        "Name": "EdiDocumentNumber",
+        "Header": "EDI - Document Number___"
+    },
+    {
+        "Name": "EdiLineNumber",
+        "Header": "EDI-Line"
+    },
+    {
+        "Name": "Identifier2ndItem",
+        "Header": "NDC___"
+    },
+    {
+        "Name": "UOM",
+        "Header": "UOM"
+    },
+    {
+        "Name": "LineType",
+        "Header": "Line Type"
+    },
+    {
+        "Name": "Unit_Price",
+        "Header": "Unit Price"
+    },
+    {
+        "Name": "Extended_Price",
+        "Header": "Extended Price"
+    },
+    {
+        "Name": "Lot",
+        "Header": "Original Lot#"
+    },
+    {
+        "Name": "Revised_Lot",
+        "Header": "Revised Lot#"
+    },
+    {
+        "Name": "AmnealReturnCode",
+        "Header": "Amneal Reject Code"
+    },
+    {
+        "Name": "Quantity",
+        "Header": "Quantity"
+    },
+    {
+        "Name": "ReasonCodeID",
+        "Header": "Reason Code ID"
+    },
+    {
+        "Name": "Seal",
+        "Header": "Item Contains a Seal"
+    },
+    {
+        "Name": "State",
+        "Header": "State"
+    },
+    {
+        "Name": "DEA",
+        "Header": "DEA"
+    },
+    {
+        "Name": "I_Tag",
+        "Header": "Placeholder for Serial Number"
+    },
+    {
+        "Name": "ProgramId",
+        "Header": "Program ID"
+    },
+    {
+        "Name": "UserId",
+        "Header": "User ID"
+    },
+    {
+        "Name": "DateUpdated",
+        "Header": "Date - Updated"
+    },
+    {
+        "Name": "TimeLastUpdated",
+        "Header": "Time - Last Updated"
+    },
+    {
+        "Name": "WorkStationId",
+        "Header": "Work Station ID"
+    },
+    {
+        "Name": "Description",
+        "Header": "Description"
+    },
+    {
+        "Name": "AmountofIncrease",
+        "Header": "Amount of Increase"
+    },
+    {
+        "Name": "UserReservedReference",
+        "Header": "User Reserved Reference"
+    },
+    {
+        "Name": "UserReservedCode",
+        "Header": "User Reserved Code"
+    },
+    {
+        "Name": "UserReservedAmount",
+        "Header": "User Reserved Amount"
+    },
+    {
+        "Name": "UserReservedNumber",
+        "Header": "User Reserved Number"
+    },
+    {
+        "Name": "UserReservedDate",
+        "Header": "User Reserved Date"
+    },
+    {
+        "Name": "UserResTime",
+        "Header": "User Reserved Time"
+    },
+    {
+        "Name": "CompanyNatureIndicator",
+        "Header": "Company Nature Indicator"
+    },
+    {
+        "Name": "Brand_Generic",
+        "Header": "Brand or Generic"
+    },
+    {
+        "Name": "NemoReference15",
+        "Header": "Reference 15"
+    },
+    {
+        "Name": "BusinessUnitOrigin",
+        "Header": "Business Unit Origin"
+    },
+    {
+        "Name": "ReturnFlag",
+        "Header": "Return Flag"
+    },
+    {
+        "Name": "FutureUseAmount",
+        "Header": "Amount -"
+    },
+    {
+        "Name": "ReturnDocumentType",
+        "Header": "ReturnDocument Type"
+    },
+    {
+        "Name": "PreProcessCompletionFlag",
+        "Header": "PreProcess Completion Flag"
+    },
+    {
+        "Name": "Paid_Quantity",
+        "Header": "Paid Quantity"
+    },
+    {
+        "Name": "WAC_Price_Calc",
+        "Header": "Calculated WAC Price"
+    },
+    {
+        "Name": "Direct_Price_Calc",
+        "Header": "Calculated Direct Price"
+    },
+    {
+        "Name": "In-Direct_Price_Calc",
+        "Header": "Calculated In-Direct Price"
+    },
+    {
+        "Name": "Sale_Type",
+        "Header": "Sale Type"
+    },
+    {
+        "Name": "Customer_Type",
+        "Header": "Customer Type"
+    },
+    {
+        "Name": "Months_Value",
+        "Header": "Months Value"
+    },
+    {
+        "Name": "Return_Price_Calc",
+        "Header": "Calculated Unit Price"
+    },
+    {
+        "Name": "Final_Amount",
+        "Header": "Final Amount"
+    },
+    {
+        "Name": "Flex_CPPT_Num",
+        "Header": "Flex PGW Key#"
+    },
+    {
+        "Name": "Override_Rejection",
+        "Header": "Remove all Rejections"
+    },
+    {
+        "Name": "ProcessingFeeRule_Sequence",
+        "Header": "Processing Fee Rule Sequence"
+    },
+    {
+        "Name": "Partials_Rule_Sequence",
+        "Header": "Partials Rule Sequence"
+    },
+    {
+        "Name": "Orig_EdiDocumentNumber",
+        "Header": "Original EDI - Document Number"
+    },
+    {
+        "Name": "Locked",
+        "Header": "Locked"
+    },
+    {
+        "Name": "Has_Header_or_Detail_Errors",
+        "Header": "Error"
+    },
+    {
+        "Name": "Price1_Type",
+        "Header": "Price1 Type"
+    },
+    {
+        "Name": "Price2_Type",
+        "Header": "Price2 Type"
+    },
+    {
+        "Name": "Price3_Type",
+        "Header": "Price3 Type"
+    },
+    {
+        "Name": "Price4_Type",
+        "Header": "Price4 Type"
+    },
+    {
+        "Name": "CPGRP_DESC",
+        "Header": "CPGRP Description"
+    },
+    {
+        "Name": "Calc_Partials_YN",
+        "Header": "Calculated Partials YN"
+    },
+    {
+        "Name": "Calc_Return$_YN",
+        "Header": "Calculated Return$ YN"
+    },
+    {
+        "Name": "Calc_Short_Pay_YN",
+        "Header": "Calculated Short Pay YN"
+    },
+    {
+        "Name": "Return_Store_Name",
+        "Header": "Return Store Name"
+    },
+    {
+        "Name": "Processing_Fee_Percent",
+        "Header": "Processing Fee Percent"
+    },
+    {
+        "Name": "Hard_Soft_Reject",
+        "Header": "Hard Soft Reject"
+    },
+    {
+        "Name": "Credit_Memo_Code",
+        "Header": "Credit Memo Code"
+    },
+    {
+        "Name": "Credit_Memo_Description",
+        "Header": "Credit Memo Description"
+    },
+    {
+        "Name": "SPF_Code",
+        "Header": "SPF Code"
+    },
+    {
+        "Name": "Division",
+        "Header": "Division"
+    },
+    {
+        "Name": "Epinephrine_Pack",
+        "Header": "Epinephrine Pack"
+    },
+    {
+        "Name": "Invalid_NDC",
+        "Header": "Invalid NDC"
+    },
+    {
+        "Name": "Invalid_Lot_NDC",
+        "Header": "Invalid Lot NDC"
+    },
+    {
+        "Name": "Flex_Prod_Num",
+        "Header": "Flex Prod Num"
+    },
+    {
+        "Name": "Invalid_Expired",
+        "Header": "Invalid Expired"
+    },
+    {
+        "Name": "Lot_Expiry_Date",
+        "Header": "Lot Expiry Date"
+    },
+    {
+        "Name": "Requested_Amount",
+        "Header": "Requested Amount"
+    },
+    {
+        "Name": "QuantitySumitted",
+        "Header": "Quantity Sumitted"
+    },
+    {
+        "Name": "QuantityRejected",
+        "Header": "Quantity Rejected"
+    },
+    {
+        "Name": "Original_Unit_Price",
+        "Header": "Original Unit Price"
+    },
+    {
+        "Name": "Flex_Bunit_Num_DT",
+        "Header": "Flex Bunit Num DT"
+    },
+    {
+        "Name": "Processing_Fee_Percent_PS",
+        "Header": "Processing Fee Percent PS"
+    },
+    {
+        "Name": "Processing_Fee_Amount",
+        "Header": "Processing Fee Amount"
+    },
+    {
+        "Name": "User_Processing_Fee_Amount",
+        "Header": "Overridden Processing Fee Amount"
+    },
+    {
+        "Name": "Rule_Sequence",
+        "Header": "Rule Sequence"
+    },
+    {
+        "Name": "Price1",
+        "Header": "Price1"
+    },
+    {
+        "Name": "Price2",
+        "Header": "Price2"
+    },
+    {
+        "Name": "Price3",
+        "Header": "Price3"
+    },
+    {
+        "Name": "Price4",
+        "Header": "Price4"
+    },
+    {
+        "Name": "Price_Check_Period",
+        "Header": "Price Check Period"
+    },
+    {
+        "Name": "Flex_Bunit_Num",
+        "Header": "Flex Bunit Number"
+    },
+    {
+        "Name": "ContIDBasedPrice_Calc",
+        "Header": "ContID Based Price Calculated"
+    },
+    {
+        "Name": "GOV_Price_Calc",
+        "Header": "GOV Price Calculated"
+    },
+    {
+        "Name": "PHS_Price_Calc",
+        "Header": "PHS Price Calculated"
+    },
+    {
+        "Name": "number111",
+        "Header": "Number111"
+    },
+    {
+        "Name": "hello",
+        "Header": "Hello"
+    },
+    {
+        "Name": "hiii",
+        "Header": "Hiii"
+    },
+    {
+        "Name": "onee",
+        "Header": "Onee"
+    }
+]
+}

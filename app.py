@@ -5,11 +5,14 @@ import os
 import hashlib
 import json
 from datetime import datetime
-
+import ollama
 from config import Config
 from database.db_connection import DatabaseConnection
 from services.forecast_service import ForecastService
 from utils.data_processor import DataProcessor
+from utils.field_mapper import map_header_to_field
+from ollama_service import generate_query_with_ollama
+
 
 app = Flask(__name__)
 CORS(app)
@@ -32,7 +35,8 @@ def home():
             "forecast": "/forecast (POST) - Generate company and state forecasts",
             "forecast_csv": "/forecast/csv (GET) - Generate forecasts from CSV (for testing)",
             "process_data": "/process-data (POST) - Process JSON data from .NET server and generate forecasts",
-            "health": "/health (GET) - API health check"
+            "health": "/health (GET) - API health check",
+            "generate-filter":"/generate-filter"
         },
         "features": {
             "company_forecasts": "Predicts top 5 companies with highest returns",
@@ -212,6 +216,74 @@ def process_data_from_net():
         print(f"❌ Error processing data from .NET: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
+
+
+def extract_json_from_text(text):
+    """
+    Extracts valid JSON from LLM response, even if wrapped in markdown or text.
+    """
+    try:
+        # Try direct JSON parse
+        return json.loads(text)
+    except Exception:
+        pass
+
+    # Extract JSON block using rege
+    match = re.search(r"\{[\s\S]*\}", text)
+    if match:
+        try:
+            return json.loads(match.group(0))
+        except Exception:
+            pass
+
+    # If nothing works, return text for debugging
+    return {"error": "Invalid JSON format", "raw": text}
+
+
+@app.route("/generate-filter", methods=["POST"])
+def generate_filter():
+    try:
+        data = request.get_json()
+        screen_name = data.get("screenName")
+        voice_text = data.get("voiceText")
+
+        if not screen_name or not voice_text:
+            return jsonify({"error": "Missing screenName or voiceText"}), 400
+
+        # Step 1: Load field mappings for the screen
+        matched_fields = map_header_to_field(screen_name, voice_text)
+
+        # Step 2: Construct LLM prompt (focus on pure JSON output)
+        prompt = f"""
+        You are a filter query generator for a .NET API.
+        Given the screen name '{screen_name}' and the user command '{voice_text}',
+        generate ONLY a JSON filter for the API with this structure:
+        {{
+          "limit": 20,
+          "page": 1,
+          "criteria": [{{"key": "<field>", "value": ["<value>"], "type": "in"}}],
+          "sortfield": "Key",
+          "direction": "desc"
+        }}
+        Valid fields are: {matched_fields}.
+        IMPORTANT: Output ONLY the raw JSON (no code block, no explanation).
+        """
+
+        # Step 3: Call Ollama locally
+        response = ollama.chat(model="llama3", messages=[{"role": "user", "content": prompt}])
+        content = response["message"]["content"]
+
+        # Step 4: Extract JSON cleanly
+        clean_json = extract_json_from_text(content)
+
+        return jsonify({"success": True, "filter": clean_json})
+
+    except Exception as e:
+        import traceback
+        print(traceback.format_exc())
+        return jsonify({"error": str(e)}), 500
+
+
 if __name__ == '__main__':
     # Create necessary directories
     os.makedirs('models', exist_ok=True)
@@ -226,4 +298,4 @@ if __name__ == '__main__':
     print("  GET  /forecast/csv - Generate forecasts from CSV (for testing)")
     print("  POST /process-data - Process JSON data from .NET server")
     
-    app.run(debug=config.DEBUG, host='0.0.0.0', port=5000)
+    app.run(debug=config.DEBUG, host='0.0.0.0', port=5005)
